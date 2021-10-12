@@ -2,7 +2,7 @@ import React from 'react';
 import { headingStyle, inputContainer } from '../../components/TextField/style';
 import TextField from '../../components/TextField/TextField';
 
-const TexFieldDemo = () => (
+const TextFieldDemo = () => (
   <div style={inputContainer}>
     <h4 style={headingStyle}><b>This is a Disabled input</b></h4>
     <TextField value="Disable Input" disabled />
@@ -13,4 +13,4 @@ const TexFieldDemo = () => (
   </div>
 );
 
-export default TexFieldDemo;
+export default TextFieldDemo;
