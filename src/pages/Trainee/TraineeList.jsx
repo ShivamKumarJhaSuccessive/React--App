@@ -5,6 +5,7 @@ import AddIcon from '@mui/icons-material/Add';
 import { StickyHeadTable } from '../../components';
 import { AddDialog } from './components';
 import { trainees } from './data';
+import { toUpperCase, getDateFormatted } from '../../lib/utils/math';
 
 const tableData = [
   {
@@ -15,6 +16,14 @@ const tableData = [
   {
     field: 'email',
     label: 'Eamil Address',
+    format: toUpperCase,
+    align: 'left',
+  },
+  {
+    field: 'createdAt',
+    label: 'Date',
+    align: 'right',
+    format: getDateFormatted,
   },
 ];
 

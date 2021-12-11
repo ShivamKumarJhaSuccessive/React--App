@@ -58,7 +58,9 @@ const StickyHeadTable = (props) => {
                       }
                     }
                     key={idx}
-                  />
+                  >
+                    {header.label || 'field'}
+                  </TableCell>
                 );
               })}
             </TableRow>
@@ -72,14 +74,19 @@ const StickyHeadTable = (props) => {
                   style={{ textDecoration: 'none' }}
 
                 >
-                  {columns.map((body) => (
-                    <TableCell
-                      align={body.align}
-                      key={body}
-                    >
-                      {item[body.field]}
-                    </TableCell>
-                  ))}
+                  {columns.map((body) => {
+                    const value = item[body.field];
+                    return (
+                      <TableCell
+                        align={body.align}
+                        key={body}
+                      >
+                        {body.format && typeof value === 'string'
+                          ? body.format(value)
+                          : value || 'No Data Found'}
+                      </TableCell>
+                    );
+                  })}
                 </TableRow>
               ))}
           </TableBody>
